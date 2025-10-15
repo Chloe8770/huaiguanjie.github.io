@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踝关节骨折医学指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#4f46e5',
+                        accent: '#0ea5e9',
+                        neutral: '#64748b',
+                        light: '#f1f5f9',
+                        dark: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-height {
+                transition: max-height 0.5s ease-in-out;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- 顶部导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-medkit text-primary text-2xl"></i>
+                <h1 class="text-xl md:text-2xl font-bold text-primary">踝关节骨折医学指南</h1>
+            </div>
+            
+            <!-- 桌面导航 -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#pathophysiology" class="text-gray-600 hover:text-primary transition-colors">病理生理学</a>
+                <a href="#epidemiology" class="text-gray-600 hover:text-primary transition-colors">流行病学</a>
+                <a href="#diagnosis" class="text-gray-600 hover:text-primary transition-colors">诊断</a>
+                <a href="#treatment" class="text-gray-600 hover:text-primary transition-colors">治疗</a>
+                <a href="#rehabilitation" class="text-gray-600 hover:text-primary transition-colors">康复</a>
+                <a href="#summary" class="text-gray-600 hover:text-primary transition-colors">知识小结</a>
+            </nav>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle" class="md:hidden text-gray-600 hover:text-primary">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#pathophysiology" class="text-gray-600 hover:text-primary py-2 transition-colors">病理生理学</a>
+                <a href="#epidemiology" class="text-gray-600 hover:text-primary py-2 transition-colors">流行病学</a>
+                <a href="#diagnosis" class="text-gray-600 hover:text-primary py-2 transition-colors">诊断</a>
+                <a href="#treatment" class="text-gray-600 hover:text-primary py-2 transition-colors">治疗</a>
+                <a href="#rehabilitation" class="text-gray-600 hover:text-primary py-2 transition-colors">康复</a>
+                <a href="#summary" class="text-gray-600 hover:text-primary py-2 transition-colors">知识小结</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-shadow">踝关节骨折的全面医学指南</h2>
+                <p class="text-lg md:text-xl opacity-90">深入了解踝关节骨折的病理、诊断、治疗与康复全过程</p>
+                <div class="mt-8">
+                    <a href="#pathophysiology" class="inline-block bg-white text-primary font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                        开始学习 <i class="fa fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- 简介卡片 -->
+        <section class="mb-16 bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="md:flex">
+                <div class="md:w-1/3 bg-primary/10 p-6 md:p-8 flex items-center justify-center">
+                    <div class="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center">
+                        <i class="fa fa-bone text-5xl text-primary"></i>
+                    </div>
+                </div>
+                <div class="md:w-2/3 p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">关于踝关节骨折</h3>
+                    <p class="text-gray-600 mb-4">踝关节骨折是急诊中常见的损伤，约占所有骨折的9-18%。踝关节由胫骨、腓骨远端和距骨组成，其稳定性依赖于骨骼结构和周围韧带组织。</p>
+                    <p class="text-gray-600">本指南涵盖踝关节骨折的病理生理学、流行病学、诊断方法、治疗选择及完整的康复方案，为医疗专业人员提供全面参考。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 病理生理学部分 -->
+        <section id="pathophysiology" class="mb-16 scroll-mt-20">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mr-3">
+                    <i class="fa fa-book"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">一、踝关节骨折</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                    <i class="fa fa-cogs mr-2"></i> 1. 病理生理学
+                </h3>
+                
+                <!-- 折叠面板 - 病理生理学简介与POTT骨折案例 -->
+                <div class="mb-6 border-b border-gray-200 pb-4">
+                    <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="pott-fracture">
+                        <span>1）病理生理学简介与POTT骨折案例</span>
+                        <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                    </button>
+                    <div id="pott-fracture" class="accordion-content mt-3 text-gray-600 hidden">
+                        <ul class="space-y-2 ml-6 list-disc">
+                            <li><strong>历史背景:</strong> 1856年Dr. Sir Percival Pott从马背跌落导致踝关节开放性损伤，骨组织外露</li>
+                            <li><strong>治疗创新:</strong> 首次采用保守治疗（非截肢），通过固定患肢位置实现自愈</li>
+                            <li><strong>命名由来:</strong> 这种特殊踝关节骨折因此被称为"POTT骨折"</li>
+                            <li><strong>临床意义:</strong> 该案例改变了传统创伤处理方式，为现代康复医学奠定基础</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 折叠面板 - 切开复位内固定的应用历史 -->
+                <div class="mb-6 border-b border-gray-200 pb-4">
+                    <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="orif-history">
+                        <span>2）切开复位内固定（ORIFs）的应用历史</span>
+                        <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                    </button>
+                    <div id="orif-history" class="accordion-content mt-3 text-gray-600 hidden">
+                        <ul class="space-y-2 ml-6 list-disc">
+                            <li><strong>技术发展:</strong> 近30年才广泛应用于骨折治疗</li>
+                            <li><strong>治疗变革:</strong> 逐渐取代单纯石膏固定的传统方法</li>
+                            <li><strong>技术特点:</strong> 通过手术实现解剖复位和机械稳定</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 折叠面板 - 骨折康复的考虑因素 -->
+                <div class="mb-6 border-b border-gray-200 pb-4">
+                    <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="rehab-factors">
+                        <span>3）骨折康复的考虑因素</span>
+                        <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                    </button>
+                    <div id="rehab-factors" class="accordion-content mt-3 text-gray-600 hidden">
+                        <p class="mb-2"><strong>核心原则:</strong> 康复方案需同时评估骨折和软组织损伤程度</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mt-3">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">内侧结构:</h4>
+                                <ul class="space-y-1 ml-6 list-disc">
+                                    <li><strong>血管风险:</strong> 胫后动脉损伤可能</li>
+                                    <li><strong>神经风险:</strong> 胫神经易受损</li>
+                                    <li><strong>韧带损伤:</strong> 三角韧带（维持足弓结构的关键）</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">外侧结构:</h4>
+                                <ul class="space-y-1 ml-6 list-disc">
+                                    <li><strong>肌腱损伤:</strong> 腓骨长/短肌腱</li>
+                                    <li><strong>韧带损伤:</strong> 外侧副韧带</li>
+                                    <li><strong>神经损伤:</strong> 腓浅神经和腓肠神经</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 折叠面板 - 踝关节骨折的具体考虑 -->
+                <div class="mb-6 border-b border-gray-200 pb-4">
+                    <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="fracture-considerations">
+                        <span>4）踝关节骨折的具体考虑</span>
+                        <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                    </button>
+                    <div id="fracture-considerations" class="accordion-content mt-3 text-gray-600 hidden">
+                        <p class="mb-2"><strong>损伤评估:</strong></p>
+                        <ul class="space-y-1 ml-6 list-disc mb-4">
+                            <li>单纯腓骨骨折影响较小（非承重骨）</li>
+                            <li>胫腓骨联合骨折需特殊处理</li>
+                            <li>骨折位置（近端/远端）决定康复方案</li>
+                        </ul>
+                        
+                        <p class="mb-2"><strong>功能影响:</strong></p>
+                        <p>内侧踝关节骨折需评估胫后动脉损伤风险和胫神经损伤可能，三角韧带损伤将直接影响足弓稳定性。</p>
+                        <p>外侧骨折需关注腓骨肌腱（腓骨长肌/短肌）状态、外侧副韧带完整性以及腓浅神经/腓肠神经损伤情况。</p>
+                    </div>
+                </div>
+                
+                <!-- 折叠面板 - 踝关节骨折的分类系统 -->
+                <div class="mb-6 border-b border-gray-200 pb-4">
+                    <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="classification">
+                        <span>5）踝关节骨折的分类系统</span>
+                        <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                    </button>
+                    <div id="classification" class="accordion-content mt-3 text-gray-600 hidden">
+                        <p class="mb-3"><strong>Weber分类系统:</strong></p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-primary">
+                                <h4 class="font-semibold text-gray-800">Type A:</h4>
+                                <ul class="space-y-1 ml-6 list-disc mt-2">
+                                    <li>横形骨折</li>
+                                    <li>三角韧带可能受牵拉但完整</li>
+                                    <li>内踝骨折通常稳定</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-secondary">
+                                <h4 class="font-semibold text-gray-800">Type B:</h4>
+                                <ul class="space-y-1 ml-6 list-disc mt-2">
+                                    <li>螺旋形/旋转型骨折</li>
+                                    <li>常伴内踝骨折和三角韧带损伤</li>
+                                    <li>多需内固定治疗</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                                <h4 class="font-semibold text-gray-800">Type C:</h4>
+                                <ul class="space-y-1 ml-6 list-disc mt-2">
+                                    <li>高位踝关节损伤</li>
+                                    <li>骨折线向近端延伸</li>
+                                    <li>必须进行ORIF手术</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 折叠面板 - 骨折对康复的影响 -->
+                <div class="mb-4">
+                    <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="rehab-impact">
+                        <span>6）骨折对康复的影响</span>
+                        <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                    </button>
+                    <div id="rehab-impact" class="accordion-content mt-3 text-gray-600 hidden">
+                        <p class="mb-2"><strong>康复变量:</strong></p>
+                        <ul class="space-y-1 ml-6 list-disc mb-4">
+                            <li>骨折类型决定负重时间</li>
+                            <li>软组织损伤程度影响活动范围训练</li>
+                            <li>神经血管状态决定康复进度</li>
+                        </ul>
+                        
+                        <p class="mb-2"><strong>临床决策:</strong></p>
+                        <ul class="space-y-1 ml-6 list-disc">
+                            <li>单纯腓骨骨折可早期活动</li>
+                            <li>合并胫骨骨折需延长保护期</li>
+                            <li>高位骨折(C型)需严格遵循手术医生方案</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 流行病学部分 -->
+            <section id="epidemiology" class="mb-8 scroll-mt-20">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-bar-chart mr-2"></i> 2. 流行病学
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span><strong>发生率:</strong> 急诊室中9-18%的骨折为踝关节骨折</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span><strong>常见类型:</strong> 外翻骨折最常见，单踝骨折占52%，双踝骨折占36.6%，三踝骨折占11.4%</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span><strong>易感人群:</strong> 年轻男性运动员、中年女性/孕妇</span>
+                                </li>
+                                
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span><strong>年龄相关机制:</strong> 年轻人多导致韧带撕裂，年长者多导致骨折</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3 text-center">踝关节骨折类型分布</h4>
+                            <div class="h-64">
+                                <canvas id="fractureTypeChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 诊断部分 -->
+            <section id="diagnosis" class="mb-8 scroll-mt-20">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-stethoscope mr-2"></i> 3. 诊断
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                <i class="fa fa-user-md text-primary mr-2"></i> 典型表现
+                            </h4>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                                    <span><strong>外伤史:</strong> 绝大多数有明显急性创伤事件</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                                    <span><strong>负重痛:</strong> 患肢承重时疼痛显著</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                                    <span><strong>肿胀:</strong> 损伤部位可见明显肿胀</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                <i class="fa fa-x-ray text-primary mr-2"></i> 影像学检查
+                            </h4>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                                    <span><strong>X线检查:</strong> 至少需要三个投照体位（正位、侧位、踝穴位）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                                    <span><strong>MRI指征:</strong> 当怀疑合并韧带损伤（如三角韧带）、肌腱损伤或软骨损伤时必需</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 治疗部分 -->
+            <section id="treatment" class="mb-8 scroll-mt-20">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-medkit mr-2"></i> 4. 非手术治疗
+                    </h3>
+                    
+                    <div class="mb-6">
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <h4 class="font-semibold text-gray-800 mb-2">治疗选择</h4>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li>• 2年随访时保守治疗与ORIF手术的临床结局相似</li>
+                                    <li>• 美国倾向于优先尝试非手术治疗</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <h4 class="font-semibold text-gray-800 mb-2">初期固定</h4>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li>• 单纯腓骨骨折: 推荐使用可拆卸支具</li>
+                                    <li>• 胫骨骨折: 需严格非负重石膏固定3-4周</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <h4 class="font-semibold text-gray-800 mb-2">康复进程</h4>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li>• 8-12周内渐进性增加负重（WBAT原则）</li>
+                                    <li>• 术后/保守治疗后的康复训练方案基本相同</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <h4 class="font-semibold text-gray-800 mb-2">特殊考量</h4>
+                        <p class="text-gray-600 text-sm">腓骨骨折愈合快，应尽早开始部分负重训练。在能提供足够保护的前提下，优先选择限制更小的固定方式。</p>
+                    </div>
+                </div>
+                
+                <!-- 手术指征 -->
+                <div class="bg-white rounded-xl shadow-md p-6 mt-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-scalpel mr-2"></i> 5. 手术指征
+                    </h3>
+                    
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa fa-exclamation-circle text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>不稳定/移位骨折：</strong>特别是伴有距骨半脱位的情况，当距骨与胫骨对位不良时，必须进行手术治疗</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-exclamation-circle text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>骨折分型：</strong>Weber分类中的B型和C型骨折，或II-III阶段骨折</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-exclamation-circle text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>旋前型骨折：</strong>这类骨折患者在负重时会出现扁平足表现，通常涉及三角韧带损伤</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-exclamation-circle text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>紧急复位需求：</strong>需要尽快复位并稳定的骨折病例</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-exclamation-circle text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>临床依据：</strong>Kandelwal和Regier等学者2015年的研究支持上述手术指征</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 手术技术 -->
+                <div class="bg-white rounded-xl shadow-md p-6 mt-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-wrench mr-2"></i> 6. 手术技术
+                    </h3>
+                    
+                    <!-- 折叠面板 - 手术器材应用 -->
+                    <div class="mb-6 border-b border-gray-200 pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="surgical-devices">
+                            <span>1）针、螺钉、钢板、髓内钉和棒的应用</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="surgical-devices" class="accordion-content mt-3 text-gray-600 hidden">
+                            <ul class="space-y-2 ml-6 list-disc">
+                                <li><strong>器材选择依据：</strong>完全取决于骨折的具体部位和严重程度</li>
+                                <li><strong>常用器材：</strong>包括但不限于钢针、螺钉、钢板、髓内钉和固定棒等</li>
+                                <li><strong>组合使用：</strong>临床中常根据实际情况组合使用多种固定器材</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 折叠面板 - 联合固定技术 -->
+                    <div class="mb-6 border-b border-gray-200 pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="syndesmotic-fixation">
+                            <span>2）联合固定技术（Syndesmotic fixation）</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="syndesmotic-fixation" class="accordion-content mt-3 text-gray-600 hidden">
+                            <ul class="space-y-2 ml-6 list-disc">
+                                <li><strong>技术要点：</strong>通过腓骨外侧向胫骨打入固定物</li>
+                                <li><strong>最佳固定方案：</strong>使用2枚4.5mm螺钉可提供最强的固定效果</li>
+                                <li><strong>解剖关系：</strong>该技术实质是将腓骨与胫骨进行固定融合</li>
+                                <li><strong>临床确认：</strong>术后X线检查首要确认是否实施了联合固定</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 折叠面板 - 联合固定对背屈角度的影响 -->
+                    <div class="mb-6 border-b border-gray-200 pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="flexion-impact">
+                            <span>3）联合固定对背屈角度的影响</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="flexion-impact" class="accordion-content mt-3 text-gray-600 hidden">
+                            <ul class="space-y-2 ml-6 list-disc">
+                                <li><strong>活动度限制：</strong>联合固定会限制胫腓骨之间的正常分离活动</li>
+                                <li><strong>背屈机制：</strong>正常背屈时胫腓骨需产生约20∘的分离间隙</li>
+                                <li><strong>临床影响：</strong>固定后患者可能无法达到健侧相同的背屈角度</li>
+                                <li><strong>康复考量：</strong>这对步态和上下楼梯功能有显著影响</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 折叠面板 - 手术硬件对活动度的影响 -->
+                    <div class="mb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="hardware-impact">
+                            <span>4）手术硬件对腓骨与胫骨活动度的影响</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="hardware-impact" class="accordion-content mt-3 text-gray-600 hidden">
+                            <ul class="space-y-2 ml-6 list-disc">
+                                <li><strong>评估重点：</strong>需明确固定物是否连接了胫骨和腓骨</li>
+                                <li><strong>活动机制：</strong>距骨在胫骨上滑动时，需要胫腓关节的协调活动</li>
+                                <li><strong>硬件影响：</strong>若固定物限制胫腓分离，将直接影响背屈活动度</li>
+                                <li><strong>康复预判：</strong>术前了解固定方式对制定康复计划至关重要</li>
+                                <li><strong>典型表现：</strong>无胫腓连接的患者背屈活动度通常优于有连接者</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 手术并发症 -->
+                <div class="bg-white rounded-xl shadow-md p-6 mt-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-exclamation-triangle mr-2"></i> 7. 手术并发症
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">感染风险因素：</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-times-circle text-red-500 mt-1 mr-2"></i>
+                                    <span>总体发生率1.44%，但特定人群风险显著升高</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-times-circle text-red-500 mt-1 mr-2"></i>
+                                    <span>开放性损伤患者感染风险最大</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-times-circle text-red-500 mt-1 mr-2"></i>
+                                    <span>糖尿病患者感染率达7.71%</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-times-circle text-red-500 mt-1 mr-2"></i>
+                                    <span>周围血管疾病患者</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-times-circle text-red-500 mt-1 mr-2"></i>
+                                    <span>吸烟者（尼古丁影响组织愈合）</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">其他并发症：</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-times-circle text-red-500 mt-1 mr-2"></i>
+                                    <span>内固定物移位（美国约15%需取出）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-times-circle text-red-500 mt-1 mr-2"></i>
+                                    <span>钢板末端二次骨折</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-times-circle text-red-500 mt-1 mr-2"></i>
+                                    <span>踝关节生物力学改变（联合固定患者更明显）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-times-circle text-red-500 mt-1 mr-2"></i>
+                                    <span>背屈活动度永久性降低</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <div class="h-64">
+                            <canvas id="complicationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 康复部分 -->
+            <section id="rehabilitation" class="mb-8 scroll-mt-20">
+                <!-- 保护运动期 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-shield mr-2"></i> 8. 保护运动期
+                    </h3>
+                    
+                    <!-- 折叠面板 - 第1阶段目标 -->
+                    <div class="mb-6 border-b border-gray-200 pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="phase1-goals">
+                            <span>1）第1阶段目标</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="phase1-goals" class="accordion-content mt-3 text-gray-600 hidden">
+                            <p class="mb-2"><strong>核心任务：</strong></p>
+                            <ul class="space-y-2 ml-6 list-disc mb-4">
+                                <li>疼痛管理：重点监测肿胀程度（前4周关键指标）</li>
+                                <li>创口保护：密切观察手术部位，预防感染</li>
+                                <li>心肺维持：针对老年患者设计低强度有氧运动</li>
+                            </ul>
+                            
+                            <p><strong>特殊考量：</strong>老年患者需特别关注心血管系统适应性训练</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 折叠面板 - 第1阶段患者教育 -->
+                    <div class="mb-6 border-b border-gray-200 pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="phase1-education">
+                            <span>2）第1阶段患者教育</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="phase1-education" class="accordion-content mt-3 text-gray-600 hidden">
+                            <p class="mb-2"><strong>负重原则：</strong></p>
+                            <ul class="space-y-2 ml-6 list-disc mb-4">
+                                <li>标准方案：严格非负重4周</li>
+                                <li>改良方案：2周后可开始部分负重（需医生评估）</li>
+                                <li>使用CAM靴时保持踝中立位，全天穿戴</li>
+                            </ul>
+                            
+                            <p class="mb-2"><strong>东西方差异：</strong></p>
+                            <ul class="space-y-2 ml-6 list-disc mb-4">
+                                <li>单纯腓骨骨折：西方可能早期负重（腓骨非承重骨负重不会影响骨折愈合或内置物稳定性）</li>
+                                <li>中国临床更倾向保守方案</li>
+                            </ul>
+                            
+                            <p><strong>生物力学原理：</strong>踝关节运动时腓骨会上下移动（内翻上移，外翻下移）</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 折叠面板 - 第1阶段治疗 -->
+                    <div class="mb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="phase1-treatment">
+                            <span>3）第1阶段治疗</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="phase1-treatment" class="accordion-content mt-3 text-gray-600 hidden">
+                            <p class="mb-2"><strong>训练内容：</strong></p>
+                            <ul class="space-y-2 ml-6 list-disc mb-4">
+                                <li>移动训练：拐杖/助行器使用教学（含楼梯技巧）</li>
+                                <li>
+                                    关节活动：
+                                    <ul class="space-y-1 ml-6 list-circle mt-1">
+                                        <li>髋膝关节全范围活动训练</li>
+                                        <li>脚趾主动/被动活动（毛巾抓握、弹珠拾取）</li>
+                                    </ul>
+                                </li>
+                                <li>肌力训练：重点加强膝关节周围肌群</li>
+                            </ul>
+                            
+                            <p class="mb-2"><strong>特殊干预：</strong></p>
+                            <ul class="space-y-2 ml-6 list-disc">
+                                <li>可拆卸靴患者：进行踝关节被动活动</li>
+                                <li>疤痕处理：早期开始疤痕松解术</li>
+                                <li>有氧选择：下肢自行车（需评估负重状态）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 渐进性承力/力量训练 -->
+                <div class="bg-white rounded-xl shadow-md p-6 mt-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-dumbbell mr-2"></i> 9. 渐进性承力/力量训练
+                    </h3>
+                    
+                    <!-- 折叠面板 - 第2阶段目标 -->
+                    <div class="mb-6 border-b border-gray-200 pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="phase2-goals">
+                            <span>1）第2阶段目标</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="phase2-goals" class="accordion-content mt-3 text-gray-600 hidden">
+                            <ul class="space-y-2 ml-6 list-disc">
+                                <li><strong>时间范围:</strong> 第5-10周开始增加负重训练</li>
+                                <li>
+                                    <strong>核心目标:</strong>
+                                    <ul class="space-y-1 ml-6 list-circle mt-1">
+                                        <li>增加踝关节跖屈/背屈活动范围（Plantarflexion/Dorsiflexion ROM）</li>
+                                        <li>监控指标：需持续观察疼痛、肿胀情况，特别注意疤痕状态</li>
+                                    </ul>
+                                </li>
+                                <li><strong>功能进展:</strong> 此阶段末期应达到完全负重状态（需医生确认）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 折叠面板 - 第2阶段患者教育 -->
+                    <div class="mb-6 border-b border-gray-200 pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="phase2-education">
+                            <span>2）第2阶段患者教育</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="phase2-education" class="accordion-content mt-3 text-gray-600 hidden">
+                            <p class="mb-2"><strong>肿胀管理:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc mb-4">
+                                <li>采用冰敷和抬高下肢（因足踝离心脏最远，肿胀可能持续1年+，老年人更明显）</li>
+                                <li>靴具移除后使用压力袜/套（需保证适度压力，避免限制肌肉收缩功能）</li>
+                            </ul>
+                            
+                            <p class="mb-2"><strong>步行训练:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc mb-4">
+                                <li>逐步增加负重状态下的步态训练</li>
+                                <li>重点改善背屈活动度（Dorsiflexion）和膝关节伸展能力</li>
+                            </ul>
+                            
+                            <p><strong>疼痛控制:</strong> 注意靴具可能因肿胀导致不适，需调整疼痛管理方案</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 折叠面板 - 第2阶段治疗 -->
+                    <div class="mb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="phase2-treatment">
+                            <span>3）第2阶段治疗</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="phase2-treatment" class="accordion-content mt-3 text-gray-600 hidden">
+                            <p class="mb-2"><strong>核心干预:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc mb-4">
+                                <li>进阶承重步行训练→短腿步行石膏支具过渡</li>
+                                <li>踝关节被动/主动活动训练（PROM/AROM）</li>
+                            </ul>
+                            
+                            <p class="mb-2"><strong>全身方案:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc mb-4">
+                                <li>实施心血管训练计划（如自行车）</li>
+                                <li>开展全身力量训练（侧重下肢但不限于）</li>
+                            </ul>
+                            
+                            <p><strong>治疗重点:</strong> 60%时间用于步态训练，同步监测关节活动度进展</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 功能/运动感觉训练 -->
+                <div class="bg-white rounded-xl shadow-md p-6 mt-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-balance-scale mr-2"></i> 10. 功能/运动感觉训练
+                    </h3>
+                    
+                    <!-- 折叠面板 - 第3阶段目标 -->
+                    <div class="mb-6 border-b border-gray-200 pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="phase3-goals">
+                            <span>1）第3阶段目标</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="phase3-goals" class="accordion-content mt-3 text-gray-600 hidden">
+                            <ul class="space-y-2 ml-6 list-disc">
+                                <li><strong>时间节点:</strong> 伤后10-14周（约2个月后）</li>
+                                <li>
+                                    <strong>关键指标:</strong>
+                                    <ul class="space-y-1 ml-6 list-circle mt-1">
+                                        <li>实现踝关节全范围活动度（需达到主动ROM完全恢复）</li>
+                                        <li>各种平面步态正常化（4个月时应基本恢复）</li>
+                                        <li>通过自行车等有氧训练维持心血管健康</li>
+                                    </ul>
+                                </li>
+                                <li><strong>特殊注意:</strong> 持续控制水肿（压力袜/支具辅助）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 折叠面板 - 第3阶段治疗 -->
+                    <div class="mb-4">
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="phase3-treatment">
+                            <span>2）第3阶段治疗</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="phase3-treatment" class="accordion-content mt-3 text-gray-600 hidden">
+                            <p class="mb-2"><strong>关节松动重点:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc mb-4">
+                                <li>距骨关节（Talocrural）背屈松动（优先）</li>
+                                <li>检查距下关节旋前/旋后功能（因长期制动易僵硬）</li>
+                                <li>胫腓关节活动度评估（无贯穿螺钉者可实施）</li>
+                            </ul>
+                            
+                            <p class="mb-2"><strong>强化训练:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc mb-4">
+                                <li>非负重肌力训练（如弹力带）</li>
+                                <li>器械训练（腿举机渐进负荷）</li>
+                            </ul>
+                            
+                            <p class="mb-2"><strong>平衡基础:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc">
+                                <li>从Romberg测试起步</li>
+                                <li>逐步过渡到串联站立（Tandem stance）</li>
+                                <li>避免早期单腿站立（考虑跌倒风险）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 运动专项训练 -->
+                <div class="bg-white rounded-xl shadow-md p-6 mt-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-futbol-o mr-2"></i> 11. 运动专项训练
+                    </h3>
+                    
+                    <!-- 折叠面板 - 运动专项训练内容 -->
+                    <div>
+                        <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-primary transition-colors" data-target="sports-training">
+                            <span>1）运动专项训练</span>
+                            <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                        </button>
+                        <div id="sports-training" class="accordion-content mt-3 text-gray-600 hidden">
+                            <p class="mb-2"><strong>进阶内容:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc mb-4">
+                                <li>多平面平衡/本体感觉训练（不平整表面）</li>
+                                <li>下台阶离心训练（重点干预项目）</li>
+                                <li>不同地面跑步训练</li>
+                            </ul>
+                            
+                            <p class="mb-2"><strong>训练频率:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc mb-4">
+                                <li>力量训练3-4次/周（持续至4-5个月）</li>
+                                <li>老年患者需加强平衡训练（针对跌倒史）</li>
+                            </ul>
+                            
+                            <p class="mb-2"><strong>出院标准:</strong></p>
+                            <ul class="space-y-1 ml-6 list-disc">
+                                <li>年轻患者可侧重专项技能</li>
+                                <li>老年患者需确保家庭训练计划（建议门诊随访）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 知识小结 -->
+            <section id="summary" class="mb-8 scroll-mt-20">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fa fa-list-alt mr-2"></i> 二、知识小结
+                    </h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">知识点</th>
+                                    <th class="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">核心内容</th>
+                                    <th class="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">易混淆点/关键细节</th>
+                                    <th class="py-3 px-4 border-b text-left text-sm font-semibold text-gray-700">临床相关性</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">踝关节骨折分类</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">Weber分类系统：<br>
+                                        - Type A：横向韧带损伤，韧带完整<br>
+                                        - Type B：螺旋骨折，累及内侧踝和三角韧带<br>
+                                        - Type C：高位踝损伤，需手术固定</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">Type A与B的损伤机制差异（旋转 vs 横向力）</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">52%累及腓骨，36.6%双踝骨折，11%三踝骨折</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Pott骨折</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">历史上首个保守治疗的开放性踝骨折案例（1856年），源自骑马坠落，骨突出后自行复位</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">术语混淆：Pott骨折特指严重踝骨折，但现代分类更细化</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">现代多需手术，保守治疗仅适用于稳定型</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">手术指征</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">不稳定/移位骨折、距骨半脱位、涉及三角韧带的旋前型骨折</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">下胫腓联合固定术（螺钉连接胫腓骨）影响背屈活动度</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">术后15%需取出内固定物（疼痛或活动受限）</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">康复阶段</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">Phase 1（0-4周）：控制肿胀、非负重活动、心血管训练<br>
+                                        Phase 2（5-10周）：渐进负重、关节活动度训练<br>
+                                        Phase 3（>2月）：全负重、力量与平衡训练</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">腓骨骨折可早期负重（非承重骨），但需保持中立位</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">老年患者需长期关注平衡（防跌倒）</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">并发症</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">感染率1.44%（吸烟/糖尿病者风险高）；内固定物移位；踝关节生物力学改变（尤其下胫腓联合固定后）</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">三角韧带损伤易被忽视，需MRI确认</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">术后肿胀可持续1年以上（正常现象）</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">治疗对比</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">手术 vs 保守：2年预后相似，但手术适用于不稳定骨折；中国 vs 美国：中国更倾向手术，美国部分腓骨骨折用行走靴</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">保守治疗需3-4周非负重，8-12周渐进负重</td>
+                                    <td class="py-3 px-4 text-sm text-gray-600">老年患者康复重点：平衡训练（防二次跌倒）</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fa fa-medkit mr-2"></i> 踝关节骨折医学指南
+                    </h3>
+                    <p class="text-gray-400">本指南提供踝关节骨折的全面医学知识，包括病理生理学、诊断、治疗和康复方案，供医疗专业人员参考。</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">快速导航</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#pathophysiology" class="hover:text-white transition-colors">病理生理学</a></li>
+                        <li><a href="#epidemiology" class="hover:text-white transition-colors">流行病学</a></li>
+                        <li><a href="#diagnosis" class="hover:text-white transition-colors">诊断</a></li>
+                        <li><a href="#treatment" class="hover:text-white transition-colors">治疗</a></li>
+                        <li><a href="#rehabilitation" class="hover:text-white transition-colors">康复</a></li>
+                        <li><a href="#summary" class="hover:text-white transition-colors">知识小结</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">医学资源</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">临床指南</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">研究文献</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">影像学资料</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">康复视频</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 踝关节骨折医学指南 | 仅供医学专业人士参考使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 折叠面板功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化折叠面板
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const targetContent = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
+                    
+                    // 切换内容显示/隐藏
+                    targetContent.classList.toggle('hidden');
+                    
+                    // 旋转图标
+                    if (!targetContent.classList.contains('hidden')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0)';
+                    }
+                });
+            });
+            
+            // 移动端菜单切换
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // 移动端菜单项点击后关闭菜单
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // 回到顶部按钮
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+                
+                // 导航栏滚动效果
+                const header = document.querySelector('header');
+                if (window.pageYOffset > 100) {
+                    header.classList.add('py-2');
+                    header.classList.remove('py-3');
+                } else {
+                    header.classList.add('py-3');
+                    header.classList.remove('py-2');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // 骨折类型分布图表
+            const fractureTypeCtx = document.getElementById('fractureTypeChart').getContext('2d');
+            new Chart(fractureTypeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['单踝骨折', '双踝骨折', '三踝骨折'],
+                    datasets: [{
+                        data: [52, 36.6, 11.4],
+                        backgroundColor: [
+                            '#3b82f6',
+                            '#8b5cf6',
+                            '#ec4899'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 并发症风险图表
+            const complicationCtx = document.getElementById('complicationChart').getContext('2d');
+            new Chart(complicationCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['总体人群', '开放性损伤', '糖尿病患者', '周围血管疾病', '吸烟者'],
+                    datasets: [{
+                        label: '感染风险 (%)',
+                        data: [1.44, 8.2, 7.71, 6.5, 5.3],
+                        backgroundColor: [
+                            'rgba(59, 130, 246, 0.7)',
+                            'rgba(239, 68, 68, 0.7)',
+                            'rgba(239, 68, 68, 0.7)',
+                            'rgba(239, 68, 68, 0.7)',
+                            'rgba(239, 68, 68, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgb(59, 130, 246)',
+                            'rgb(239, 68, 68)',
+                            'rgb(239, 68, 68)',
+                            'rgb(239, 68, 68)',
+                            'rgb(239, 68, 68)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `感染风险: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
